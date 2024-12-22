@@ -1,16 +1,13 @@
 package exercise2.tests.office.exporters;
 
-import exercise2.main.office.Office;
-import exercise2.main.office.SpreadSheetImpl;
 import exercise2.main.office.ValueType;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-public class ValuerTypeTest {
+public class ValueTypeTest {
 
     @Test
     public void recognizesIntegers() {
