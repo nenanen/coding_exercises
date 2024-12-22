@@ -1,17 +1,21 @@
 package exercise2.main.office;
 
-import static exercise2.main.utils.StringUtils.isInteger;
 
 public class SpreadSheetImpl implements Spreadsheet {
     private final String[][] spreadSheet;
+    private final int rowsCount;
+    private final int columnsCount;
 
     public SpreadSheetImpl(int rows, int columns) {
-        spreadSheet = generateEmptySpreadSheet(rows, columns);
+        this.spreadSheet = generateEmptySpreadSheet(rows, columns);
+        this.rowsCount = rows;
+        this.columnsCount = columns;
     }
 
     @Override
     public String get(int row, int column) throws IndexOutOfBoundsException {
-        return spreadSheet[row][column];
+        String value = spreadSheet[row][column];
+        return value != null ? value : "";
     }
 
     @Override
@@ -23,6 +27,23 @@ public class SpreadSheetImpl implements Spreadsheet {
     @Override
     public void put(int row, int column, String value) throws IndexOutOfBoundsException {
         spreadSheet[row][column] = cleanValue(value);
+    }
+
+    @Override
+    public String[][] getSheet() {
+        return spreadSheet;
+    }
+
+
+    @Override
+    public int getRowsCount() {
+        return rowsCount;
+    }
+
+
+    @Override
+    public int getColumnsCount() {
+        return columnsCount;
     }
 
     /**
