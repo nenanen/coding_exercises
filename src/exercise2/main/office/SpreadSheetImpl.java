@@ -17,21 +17,27 @@ public class SpreadSheetImpl implements Spreadsheet {
     @Override
     public ValueType getValueType(int row, int column) throws IndexOutOfBoundsException {
         String value = get(row, column);
-
-        if (isInteger(value)) {
-            return ValueType.INTEGER;
-        }
-
-        if (value.startsWith("=")) {
-            return ValueType.FORMULA;
-        }
-
-        return ValueType.STRING;
+        return ValueType.ofString(value);
     }
 
     @Override
     public void put(int row, int column, String value) throws IndexOutOfBoundsException {
-        spreadSheet[row][column] = value;
+        spreadSheet[row][column] = cleanValue(value);
+    }
+
+    /**
+     * Cleans the provided spreadsheet value.
+     * Specifically, by trimming whitespaces from integer values.
+     * Other types of values are returned without any changes.
+     *
+     * @param value the Spreadsheet value to check and clean
+     * @return the cleaned value, safe to store in the spreadsheet
+     */
+    private String cleanValue(String value) {
+        if (ValueType.ofString(value.trim()) == ValueType.INTEGER) {
+            return value.trim();
+        }
+        return value;
     }
 
     private String[][] generateEmptySpreadSheet(int rows, int columns) {

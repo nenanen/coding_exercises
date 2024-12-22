@@ -78,17 +78,17 @@ public class QuestionTest {
         // Formulas are not computed. That means, no need to parse them
         Assert.assertEquals("= 4 + 8", sheet.get(1, 1));
     }
-//
-//    @Test
-//    public void integerCellsAreTrimmed() {
-//        sheet.put(1, 1, "     50 ");
-//        Assert.assertEquals("50", sheet.get(1, 1));
-//
-//        // But string cells stay as they are
-//        sheet.put(2, 2, "     foo ");
-//        Assert.assertEquals("     foo ", sheet.get(2, 2));
-//    }
-//
+
+    @Test
+    public void integerCellsAreTrimmed() {
+        sheet.put(1, 1, "     50 ");
+        Assert.assertEquals("50", sheet.get(1, 1));
+
+        // But string cells stay as they are
+        sheet.put(2, 2, "     foo ");
+        Assert.assertEquals("     foo ", sheet.get(2, 2));
+    }
+
 //    /**
 //     * In a more real example, the different representations could perhaps be JSON,
 //     * XML, CSV and binary format. But we will use simple export options here.
