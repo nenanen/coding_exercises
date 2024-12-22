@@ -41,12 +41,22 @@ public class DeduplicatorTest {
         actual = Deduplicator.getDuplicatesInOriginalOrder(List.of("a", "b", "a"));
         expected = List.of("a");
         Assert.assertEquals(expected, actual);
+
+        actual = Deduplicator.getDuplicatesInOriginalOrder(List.of("aaaa", "a", "aa", "a", "aaa"));
+        expected = List.of("a");
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void handlesMultipleDuplicates() {
         List<String> actual = Deduplicator.getDuplicatesInOriginalOrder(List.of("a", "b", "a", "b", "c"));
         List<String> expected = List.of("a", "b");
+
+        Assert.assertEquals(expected, actual);
+
+
+        actual = Deduplicator.getDuplicatesInOriginalOrder(List.of("ab", "ba", "ab", "bb", "ba", "ca"));
+        expected = List.of("ab", "ba");
 
         Assert.assertEquals(expected, actual);
     }
