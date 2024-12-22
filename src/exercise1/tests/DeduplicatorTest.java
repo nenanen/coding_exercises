@@ -1,6 +1,6 @@
-package tests.exercise1;
+package exercise1.tests;
 
-import main.exercise1.Deduplicator;
+import exercise1.main.Deduplicator;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -13,18 +13,18 @@ class DeduplicatorTest {
 
     @Test
     void handlesEmptyList() {
-        List<String> actual = Deduplicator.getDuplicates(emptyList());
+        List<String> actual = Deduplicator.getDuplicatesInOriginalOrder(emptyList());
         List<String> expected = emptyList();
         assertEquals(expected, actual);
     }
 
     @Test
     void handlesNoDuplicates() {
-        List<String> actual = Deduplicator.getDuplicates(List.of("a"));
+        List<String> actual = Deduplicator.getDuplicatesInOriginalOrder(List.of("a"));
         List<String> expected = emptyList();
         assertEquals(expected, actual);
 
-        actual = Deduplicator.getDuplicates(List.of("a","b","c","d"));
+        actual = Deduplicator.getDuplicatesInOriginalOrder(List.of("a", "b", "c", "d"));
         expected = emptyList();
         assertEquals(expected, actual);
     }
@@ -32,18 +32,18 @@ class DeduplicatorTest {
 
     @Test
     void handlesOneDuplicates() {
-        List<String> actual = Deduplicator.getDuplicates(List.of("a","a"));
+        List<String> actual = Deduplicator.getDuplicatesInOriginalOrder(List.of("a", "a"));
         List<String> expected = List.of("a");
         assertEquals(expected, actual);
 
-        actual = Deduplicator.getDuplicates(List.of("a","b","a"));
+        actual = Deduplicator.getDuplicatesInOriginalOrder(List.of("a", "b", "a"));
         expected = List.of("a");
         assertEquals(expected, actual);
     }
 
     @Test
     void handlesMultipleDuplicates() {
-        List<String> actual = Deduplicator.getDuplicates(List.of("a","b","a","b","c"));
+        List<String> actual = Deduplicator.getDuplicatesInOriginalOrder(List.of("a", "b", "a", "b", "c"));
         List<String> expected = List.of("a", "b");
 
         assertEquals(expected, actual);
@@ -51,12 +51,12 @@ class DeduplicatorTest {
 
     @Test
     void handlesMultipleDuplicatesInOrderOfAppearance() {
-        List<String> actual = Deduplicator.getDuplicates(List.of("a","b","b","a", "c"));
+        List<String> actual = Deduplicator.getDuplicatesInOriginalOrder(List.of("a", "b", "b", "a", "c"));
         List<String> expected = List.of("a", "b");
         assertEquals(expected, actual);
 
 
-        actual = Deduplicator.getDuplicates(List.of("b", "a", "c", "c", "e", "a", "c", "d", "c", "d"));
+        actual = Deduplicator.getDuplicatesInOriginalOrder(List.of("b", "a", "c", "c", "e", "a", "c", "d", "c", "d"));
         expected = List.of("a", "c", "d");
         assertEquals(expected, actual);
     }
