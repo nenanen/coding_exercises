@@ -54,11 +54,11 @@ public class QuestionTest {
         sheet.get(12, 3);
     }
 
-//    @Test(expected = IndexOutOfBoundsException.class)
-//    public void cantPutOutOfLimits() {
-//        sheet.put(3, 7, "foo");
-//    }
-//
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void cantPutOutOfLimits() {
+        sheet.put(3, 7, "foo");
+    }
+
 //    @Test
 //    public void basicValueTypesAreRecognized() {
 //        sheet.put(2, 3, "foo");

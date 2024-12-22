@@ -13,7 +13,7 @@ public class SpreadSheetImpl implements Spreadsheet {
     }
 
     @Override
-    public void put(int row, int column, String value) {
+    public void put(int row, int column, String value) throws IndexOutOfBoundsException {
         spreadSheet[row][column] = value;
     }
 
