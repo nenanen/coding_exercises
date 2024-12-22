@@ -39,15 +39,15 @@ public class QuestionTest {
         Assert.assertEquals("", sheet.get(0, 0));
         Assert.assertEquals("", sheet.get(3, 4));
     }
-//
-//    @Test
-//    public void cellsAreStored() {
-//        sheet.put(1, 2, "foo");
-//        Assert.assertEquals("foo", sheet.get(1, 2));
-//
-//        sheet.put(3, 3, "bar");
-//        Assert.assertEquals("bar", sheet.get(3, 3));
-//    }
+
+    @Test
+    public void cellsAreStored() {
+        sheet.put(1, 2, "foo");
+        Assert.assertEquals("foo", sheet.get(1, 2));
+
+        sheet.put(3, 3, "bar");
+        Assert.assertEquals("bar", sheet.get(3, 3));
+    }
 //
 //    @Test(expected = IndexOutOfBoundsException.class)
 //    public void cantGetOutOfLimits() {

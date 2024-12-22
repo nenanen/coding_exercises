@@ -12,6 +12,11 @@ public class SpreadSheetImpl implements Spreadsheet {
         return spreadSheet[row][column];
     }
 
+    @Override
+    public void put(int row, int column, String value) {
+        spreadSheet[row][column] = value;
+    }
+
     private String[][] generateEmptySpreadSheet(int rows, int columns) {
         String[][] emptySpreadSheet = new String[rows][columns];
 
