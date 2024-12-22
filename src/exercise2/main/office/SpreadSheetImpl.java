@@ -8,7 +8,7 @@ public class SpreadSheetImpl implements Spreadsheet {
     }
 
     @Override
-    public String get(int row, int column) {
+    public String get(int row, int column) throws IndexOutOfBoundsException {
         return spreadSheet[row][column];
     }
 
