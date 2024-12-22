@@ -1,5 +1,7 @@
 package exercise2.main.office;
 
+import static exercise2.main.utils.StringUtils.isInteger;
+
 public class SpreadSheetImpl implements Spreadsheet {
     private final String[][] spreadSheet;
 
@@ -10,6 +12,21 @@ public class SpreadSheetImpl implements Spreadsheet {
     @Override
     public String get(int row, int column) throws IndexOutOfBoundsException {
         return spreadSheet[row][column];
+    }
+
+    @Override
+    public ValueType getValueType(int row, int column) throws IndexOutOfBoundsException {
+        String value = get(row, column);
+
+        if (isInteger(value)) {
+            return ValueType.INTEGER;
+        }
+
+        if (value.startsWith("=")) {
+            return ValueType.FORMULA;
+        }
+
+        return ValueType.STRING;
     }
 
     @Override
