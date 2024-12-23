@@ -20,14 +20,25 @@ The exercises have been split up in their own packages, resulting in the followi
 - src.main.java
     - exercise1
         - main
-        - test
+        - tests
     - exercise2
         - main
-        - test
+        - tests
     - exercise3
         - main
-        - test
+        - tests
 ```
+Each `tests` package contains unit tests regarding the implemented code in the related `main` package. 
+No other test types have introduced, e.g. Cucumber tests.
+
+Regarding code style/documentation, normally I would follow the style of the project, 
+e.g. because the `QuestionTest` contains JUnit4, this is what I have continued using i.o. 
+switching to JUnit5 (which might be interesting for a separate task/story).
+Since there was not a lot of style to follow, 
+I only added comments on selected pieces of code, 
+where I deemed additional context valuable.
+
+
 
 ## Exercise 1: Detecting Duplicates
 The `getDuplicatesInOriginalOrder` method identifies duplicate elements in a list and returns them in the order they first appeared.
@@ -55,6 +66,9 @@ A simple spreadsheet engine, implemented with a Test-Driven Development (TDD) ap
 
 #### Features:
 - The exporter has been implemented using the Strategy Pattern. Allowing for easy extension of SpreadSheetExporters
+
+### Missing Features
+- Tests on `office.java`
 
 #### How to Run
 Compile and execute the `QuestionTest.java` tests to validate the solution.
