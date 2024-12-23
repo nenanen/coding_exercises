@@ -15,7 +15,7 @@ This project includes solutions for the three exercises provided by CERN:
 2. Implementing a simple spreadsheet engine.
 3. Building a Java library to process JSON-based dependency graphs.
 
-The exercises have been split up in their own packages, resulting in the following folder structure:
+The exercises have been split up in their own packages, resulting in the following code folder structure:
 ```text
 - src.main.java
     - exercise1
@@ -54,13 +54,7 @@ More tests can easily be added, to further test the method.
 A simple spreadsheet engine, implemented with a Test-Driven Development (TDD) approach.
 
 #### Features:
-- Code adheres to a real-world project standard.
-- Implements business logic based on provided test cases.
-- Proper naming conventions, refactoring, and documentation.
-
-### Missing Features
-- In the real-world, additional tests would have been provided on the `Office`, `SpreadSheetImpl` and `SpreadSheetExporter`'s.
-Since the provided `QuestionTest` covered the requested features, some of the other tests were left out. 
+- The exporter has been implemented using the Strategy Pattern. Allowing for easy extension of SpreadSheetExporters
 
 #### How to Run
 Compile and execute the `QuestionTest.java` tests to validate the solution.
@@ -78,7 +72,6 @@ A Java library for processing JSON-based package dependencies and constructing a
 
 ### Missing Features
 - Cycle detection in dependencies.
-- Tests on the PackageNode
 
 ### How to Run
 The `PackageReader` can be tested through the `PackageReaderTest.java` file.

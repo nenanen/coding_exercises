@@ -8,7 +8,7 @@ public class PackageNode {
     private final List<PackageNode> dependencies;
     public String name;
 
-    PackageNode(String name) {
+    public PackageNode(String name) {
         this.name = name;
         dependencies = new ArrayList<>();
     }

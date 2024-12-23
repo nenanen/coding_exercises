@@ -1,5 +1,6 @@
 package exercise3.tests;
 
+import exercise3.main.PackageNode;
 import exercise3.main.PackageReader;
 import org.junit.Assert;
 import org.junit.Test;
@@ -12,18 +13,10 @@ import java.io.IOException;
 public class PackageReaderTest {
 
     @Test
-    public void stringifiesProvidedExample() throws IOException {
-        String actual = PackageReader.stringifyPackageTree("src/main/java/exercise3/packagesProvidedExample.json");
+    public void stringifiesNoPackages() throws IOException {
+        String actual = PackageReader.stringifyPackageTree("src/main/java/exercise3/packagesEmpty.json");
 
-        String expected = """
-                - pkg1
-                    - pkg2
-                        - pkg3
-                    - pkg3
-                - pkg2
-                    - pkg3
-                - pkg3
-                """;
+        String expected = "";
         Assert.assertEquals(expected, actual);
     }
 
@@ -59,6 +52,41 @@ public class PackageReaderTest {
                         - pkg1
                         - pkg2
                             - pkg1
+                """;
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void stringifiesProvidedExample() throws IOException {
+        String actual = PackageReader.stringifyPackageTree("src/main/java/exercise3/packagesProvidedExample.json");
+
+        String expected = """
+                - pkg1
+                    - pkg2
+                        - pkg3
+                    - pkg3
+                - pkg2
+                    - pkg3
+                - pkg3
+                """;
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getProvidedExamplePackageTree() throws IOException {
+        PackageNode root = PackageReader.getPackageTree("src/main/java/exercise3/packagesProvidedExample.json");
+
+        Assert.assertEquals("root", root.name);
+
+        String actual = root.stringifyDependencies(0);
+        String expected = """
+                - pkg1
+                    - pkg2
+                        - pkg3
+                    - pkg3
+                - pkg2
+                    - pkg3
+                - pkg3
                 """;
         Assert.assertEquals(expected, actual);
     }

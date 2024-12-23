@@ -5,8 +5,8 @@ import exercise2.main.office.SpreadSheetImpl;
 import exercise2.main.office.Office;
 
 import exercise2.main.office.ValueType;
-import exercise2.main.office.exporters.DashSpreadSheetExporter;
-import exercise2.main.office.exporters.StarSpreadSheetExporter;
+import exercise2.main.office.exporters.DashSpreadSheetExporterImpl;
+import exercise2.main.office.exporters.StarSpreadSheetExporterImpl;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -114,7 +114,7 @@ public class QuestionTest {
                         + "-----" // 7
                         + "-----" // 8
                         + "-----" // 9
-                , new DashSpreadSheetExporter(sheet).export());
+                , new DashSpreadSheetExporterImpl(sheet).export());
 
         Assert.assertEquals("10,5#" // Line breaks added for readability. There are no "\n" in the String
                         + "a*****" // 0
@@ -127,6 +127,6 @@ public class QuestionTest {
                         + "*****" // 7
                         + "*****" // 8
                         + "*****" // 9
-                , new StarSpreadSheetExporter(sheet).export());
+                , new StarSpreadSheetExporterImpl(sheet).export());
     }
 }
