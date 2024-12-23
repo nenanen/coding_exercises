@@ -41,7 +41,6 @@ public class SpreadSheetExporterImpl implements SpreadSheetExporter {
     /**
      * Generates the body section of the exported spreadsheet.
      * The body contains the spreadsheet data, with values separated by the specified delimiter.
-     * Null values are replaced with empty strings.
      *
      * @return a string representing the spreadsheet body.
      */
