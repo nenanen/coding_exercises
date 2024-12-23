@@ -73,6 +73,8 @@ A simple spreadsheet engine, implemented with a Test-Driven Development (TDD) ap
 #### How to Run
 Compile and execute the `QuestionTest.java` tests to validate the solution.
 
+To showcase the TDD approach, each test function has its own commit in this PR https://github.com/nenanen/coding_exercises/pull/1.
+In follow-up commits to the main branch, some additional tests/comments where places.
 
 ## Exercise 3: Dependency Graph
 A Java library for processing JSON-based package dependencies and constructing a full dependency graph.
