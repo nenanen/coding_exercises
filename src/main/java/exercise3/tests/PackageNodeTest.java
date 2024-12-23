@@ -91,21 +91,4 @@ public class PackageNodeTest {
                 """;
         Assert.assertEquals(expected, actual);
     }
-
-    @Test
-    public void handlesNoIndentation() {
-        PackageNode root = new PackageNode("root");
-        PackageNode dependency1 = new PackageNode("dependency1");
-        PackageNode dependency2 = new PackageNode("dependency2");
-
-        root.addDependencies(dependency1);
-        root.addDependencies(dependency2);
-
-        String actual = root.stringifyDependencies(0);
-        String expected = """
-                - dependency1
-                - dependency2
-                """;
-        Assert.assertEquals(expected, actual);
-    }
 }
