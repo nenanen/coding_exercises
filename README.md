@@ -31,14 +31,14 @@ The exercises have been split up in their own packages, resulting in the followi
 Each `tests` package contains unit tests regarding the implemented code in the related `main` package. 
 No other test types have introduced, e.g. Cucumber tests.
 
-Regarding code style/documentation, normally I would follow the style of the project, 
+Regarding code style/documentation:
+- Normally I would follow the style of the project, 
 e.g. because the `QuestionTest` contains JUnit4, this is what I have continued using i.o. 
 switching to JUnit5 (which might be interesting for a separate task/story).
-Since there was not a lot of style to follow, 
+- Since there was not a lot of style to follow, 
 I only added comments on selected pieces of code, 
 where I deemed additional context valuable.
-
-
+- I see now my commit messages are rather poor. Ideally they would have been more clear and prefixed with `exercise 2:` or similar.
 
 ## Exercise 1: Detecting Duplicates
 The `getDuplicatesInOriginalOrder` method identifies duplicate elements in a list and returns them in the order they first appeared.
